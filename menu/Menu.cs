@@ -1,15 +1,16 @@
 using System;
 using System.Threading;
+using Tarea_4.controller.person;
 
 namespace Tarea_4.menu
 {
-    public class Menu
+    public class Menu : PersonController
     {
         public string MenuMenssage {get; set;}
 
         public void DisplayMenu()
         {
-            MenuMenssage = "\t\ta) Program #1 | b) Program #2 | c) Program #3 | x) Exit ";
+            MenuMenssage = "\n\n\t\ta) Agregar | b) Pagar | c) Exportar Caso | x) Salir ";
 
             Console.WriteLine(MenuMenssage);
             Console.Write("\n\n ■ Ingrese una de las opciones disponibles: ");
@@ -17,7 +18,7 @@ namespace Tarea_4.menu
             try { SelectOption(Convert.ToChar(Console.ReadLine().ToLower())); }
             catch (System.Exception)
             {
-                Console.WriteLine("Debes introducir un personaje al mismo tiempo.");
+                Console.WriteLine("Debes introducir un carácter al mismo tiempo.");
                 Console.WriteLine("\nVuelva a intentarlo....");
                 Thread.Sleep(3000);
                 ResetDisplay();
@@ -29,13 +30,16 @@ namespace Tarea_4.menu
             switch (option)
             {
                 case 'a':
-                    Console.WriteLine("Hola Mundo");
+                    ResetDisplay();
+                    Add();
                 break;
                 case 'b':
-                    Console.WriteLine("Hola Mundo");
+                    ResetDisplay();
+                    Pay();
                 break;
                 case 'c':
-                    Console.WriteLine("Hola Mundo");
+                    ResetDisplay();
+                    Export();
                 break;
                 case 'x':
                     Console.WriteLine("\nGracias ... deberías volver, nos vemos luego <3.");
@@ -43,13 +47,13 @@ namespace Tarea_4.menu
                     Environment.Exit(0);
                 break;
                 default:
+                    Console.WriteLine("\nLa opción que eliges no está disponible ... inténtalo de nuevo gracias <3");
+                    Thread.Sleep(3000);
+                    ResetDisplay();
                 break;
             }
         }
 
-        public void ResetDisplay()
-        {
-            Console.Clear();
-        }
+        public void ResetDisplay() { Console.Clear(); }
     }
 }

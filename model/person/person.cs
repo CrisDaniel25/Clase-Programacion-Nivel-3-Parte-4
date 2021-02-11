@@ -15,23 +15,5 @@ namespace Tarea_4.model.person
         public double Longitud {get; set;}
         public string Descripción {get; set;}
         public bool Pago {get; set;}
-
-        public Person() { }
-
-        public Person(
-            double cedula, string nombre, string apellido, string placa, string marca, 
-            double latitud, double longitud, string descripción, bool pago
-            )
-        {
-            Cedula = cedula;
-            Nombre = nombre;
-            Apellido = apellido;
-            Placa = placa;
-            Marca = marca;
-            Latitud = latitud;
-            Longitud = longitud;
-            Descripción = descripción;
-            Pago = pago;
-        }
     }
 }

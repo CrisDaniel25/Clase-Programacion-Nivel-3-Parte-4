@@ -1,16 +1,17 @@
 ﻿using System;
 using Tarea_4.menu;
-using Tarea_4.model.person;
+using Tarea_4.database.SQLite;
 
 namespace Tarea_4
 {
-    class Program
+    class Program : Database
     {
         static void Main(string[] args)
         {
-            Person person = new Person();
             while (true)
             {
+                Console.Clear();
+                DisplayInformation();
                 Menu menu = new Menu();
                 menu.DisplayMenu();
             }
