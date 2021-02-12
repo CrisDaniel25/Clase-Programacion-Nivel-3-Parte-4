@@ -5,17 +5,16 @@ namespace Tarea_4.database.SQLite
 {
     public class Database
     {
-        public static string cs = @"URI=file:C:\Users\crist\Desktop\Programacion III\Tarea-4\mydatabase.db";
-        public string connection = @"URI=file:C:\Users\crist\Desktop\Programacion III\Tarea-4\mydatabase.db";
+        public static string connection = "";
 
         public static void CheckedVersion()
         {
             try
             {
-                string cs = "Data Source=:memory:";
+                string connection = "Data Source=:memory:";
                 string stm = "SELECT SQLITE_VERSION()";
 
-                using var con = new SQLiteConnection(cs);
+                using var con = new SQLiteConnection(connection);
                 con.Open();
 
                 using var cmd = new SQLiteCommand(stm, con);
@@ -30,7 +29,7 @@ namespace Tarea_4.database.SQLite
         {  
             try
             {
-                using var con = new SQLiteConnection(cs);
+                using var con = new SQLiteConnection(connection);
                 con.Open();
 
                 using var cmd = new SQLiteCommand(con);
@@ -49,7 +48,7 @@ namespace Tarea_4.database.SQLite
         {
             try
             {
-                using var con = new SQLiteConnection(cs);
+                using var con = new SQLiteConnection(connection);
                 con.Open();
 
                 string stm = "SELECT * FROM personas";

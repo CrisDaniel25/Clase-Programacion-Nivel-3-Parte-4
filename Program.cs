@@ -8,6 +8,11 @@ namespace Tarea_4
     {
         static void Main(string[] args)
         {
+            // CreateDatabase();
+            // CheckedVersion();
+            var url = Console.ReadLine();
+            connection = @"URI=file:" + url;
+
             while (true)
             {
                 Console.Clear();

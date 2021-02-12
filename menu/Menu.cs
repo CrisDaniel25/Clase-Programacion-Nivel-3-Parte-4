@@ -42,8 +42,9 @@ namespace Tarea_4.menu
                     Export();
                 break;
                 case 'x':
-                    Console.WriteLine("\nGracias ... deberías volver, nos vemos luego <3.");
+                    Console.WriteLine("\nGracias ... deberías volver a nuestro sistema pronto, nos vemos luego <3.");
                     Thread.Sleep(3000);
+                    ResetDisplay();
                     Environment.Exit(0);
                 break;
                 default:

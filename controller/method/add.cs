@@ -21,9 +21,8 @@ namespace Tarea_4.controller.method
                 Console.Write("\n\n■ Ingrese la longitud del hecho: "); Longitud = Convert.ToDouble(Console.ReadLine());
                 Console.Write("\n\n■ Ingrese su descripción: "); Descripción = Console.ReadLine();
                 Pago = false;
-
-                Database connection = new Database();
-                using var con = new SQLiteConnection(connection.connection);
+                
+                using var con = new SQLiteConnection(Database.connection);
                 con.Open();
                 using var cmd = new SQLiteCommand(con);
                 cmd.CommandText = "INSERT INTO personas(cedula, nombre, apellido, placa, marca, latitud, longitud, descripción, pago) " +
