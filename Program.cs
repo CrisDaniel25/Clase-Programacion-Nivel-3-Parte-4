@@ -10,6 +10,9 @@ namespace Tarea_4
         {
             // CreateDatabase();
             // CheckedVersion();
+            Console.Clear();
+            Console.WriteLine("■ Ejemplo de URL para la conexión: C:\\Users\\crist\\Desktop\\Programacion III\\Tarea-4\\mydatabase.db");
+            Console.Write("\n\n■ Para continuar con la aplicación, primero debe proporcionarnos la URL de conexión a la base de datos: ");
             var url = Console.ReadLine();
             connection = @"URI=file:" + url;
 
